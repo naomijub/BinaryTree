@@ -76,3 +76,17 @@ node* BinTree::find(int key, node* leaf) {
 void BinTree::printNode(node* leaf) {
 	cout << "Node value = " << leaf->value << endl;
 }
+
+void BinTree::destroyTree() {
+	destroyTree(root);
+}
+
+void BinTree::destroyTree(node* leaf) {
+	if (leaf != NULL) {
+		destroyTree(leaf->left);
+		destroyTree(leaf->right);
+		delete leaf;
+	}
+	
+	
+}

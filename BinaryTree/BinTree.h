@@ -19,10 +19,12 @@ public:
 	bool insert(int key);
 	node* find(int key);
 	void printNode(node* leaf);
+	void destroyTree();
 
 private:
 	bool insert(int key, node* leaf);
 	node* find(int key, node* leaf);
+	void destroyTree(node* leaf);
 
 	node* root;
 };
