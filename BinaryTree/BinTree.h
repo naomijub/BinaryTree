@@ -18,6 +18,7 @@ public:
 
 	bool insert(int key);
 	node* find(int key);
+	void printNode(node* leaf);
 
 private:
 	bool insert(int key, node* leaf);

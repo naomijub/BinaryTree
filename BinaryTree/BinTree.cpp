@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "BinTree.h"
+#include <iostream>
 
+using namespace std;
 
 BinTree::BinTree()
 {
@@ -50,4 +52,27 @@ bool BinTree::insert(int key, node* leaf) {
 		return true;
 	}
 	return false;
+}
+
+node* BinTree::find(int key) {
+	return find(key, root);
+}
+
+node* BinTree::find(int key, node* leaf) {
+	if (leaf != NULL) {
+		if (key == leaf->value) {
+			return leaf;
+		}
+		else if (key < leaf->value) {
+			return find(key, leaf->left);
+		}
+		else {
+			return find(key, leaf->right);
+		}
+	}
+	return NULL;
+}
+
+void BinTree::printNode(node* leaf) {
+	cout << "Node value = " << leaf->value << endl;
 }
