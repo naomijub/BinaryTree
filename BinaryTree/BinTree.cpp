@@ -87,6 +87,17 @@ void BinTree::destroyTree(node* leaf) {
 		destroyTree(leaf->right);
 		delete leaf;
 	}
-	
-	
+}
+
+void BinTree::printTree() {
+	printTree(root);
+	cout<<endl;
+}
+
+void BinTree::printTree(node* leaf) {
+	if (leaf != NULL) {
+		printTree(leaf->left);
+		cout << leaf->value<<" ";
+		printTree(leaf->right);
+	}
 }
