@@ -16,6 +16,7 @@ int main()
 	cout << bt->insert(5) << endl;
 	bt->printNode(bt->find(7));
 	bt->printTree();
+	cout << bt->size() << endl;
 	bt->destroyTree();
 
 	cin >> i;

@@ -101,3 +101,16 @@ void BinTree::printTree(node* leaf) {
 		printTree(leaf->right);
 	}
 }
+
+int BinTree::size() {
+	return size(root);
+}
+
+int BinTree::size(node* leaf) {
+	if (leaf == NULL) {
+		return 0;
+	}
+	else {
+		return (1 + size(leaf->left) + size(leaf->right));
+	}
+}
